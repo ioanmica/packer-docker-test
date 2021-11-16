@@ -19,9 +19,16 @@ build {
   ]
 
   post-processor "docker-tag" {
-    repository = "learn-packer"
+    repository = "gcr.io/micamedic/learn-packer"
     tags       = ["packer-rocks"]
     only       = ["docker.ubuntu"]
+  }
+
+  post-processor "docker-push" {
+    login = true
+    login_server = "https://gcr.io/"
+    login_username = "{{user `username`}}"
+    login_password = "{{user `password`}}"
   }
 
 }
