@@ -24,4 +24,8 @@ jobs:
         run: packer build -color=false -on-error=abort packer.pkr.hcl                
         env:
           PACKER_LOG: 1
+
+      - name: List images
+        run: docker images
+
           
