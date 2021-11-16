@@ -21,7 +21,7 @@ jobs:
 
       # build artifact
       - name: Build Artifact
-        run: packer build -color=false -on-error=abort -var-file="variables.pkr.hcl" .                
+        run: packer build -color=false -on-error=abort .                
         env:
           PACKER_LOG: 1
 

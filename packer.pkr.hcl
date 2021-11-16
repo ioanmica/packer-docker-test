@@ -27,8 +27,8 @@ build {
   post-processor "docker-push" {
     login = true
     login_server = "https://gcr.io/"
-    login_username = "{{user `username`}}"
-    login_password = "{{user `password`}}"
+    login_username = "${var.username}"
+    login_password = "${var.password}"
   }
 
 }
